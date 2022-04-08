@@ -14,6 +14,10 @@ public class ArmazenamentoSequencial {
 	private char array[] = new char[10];
 	private int qtdElementos = 0;
 	
+	/**
+	 * Conhecendo a proxima posicao disponivel a insercao de elementos sera mais rapida.
+	 * Se for usado um loop para descobrir a proxima posicao disponivel o algoritmo sera mais lento.
+	 * */
 	public void addItemArray(char value) {
 		
 		if(qtdElementos == this.array.length) throw new RuntimeException("Array ja possui qtd maxima de elementos ("+this.array.length+").");
@@ -28,6 +32,9 @@ public class ArmazenamentoSequencial {
 		return this.array[index];
 	}
 	
+	/**
+	 * Sera necessario reorganizar o vetor para insercao de elementos de maneira arbitraria no meio do array
+	 * */
 	public void addByIndex(char value, int index) {
 		if(qtdElementos == this.array.length) throw new RuntimeException("Array ja possui qtd maxima de elementos ("+this.array.length+").");
 		
