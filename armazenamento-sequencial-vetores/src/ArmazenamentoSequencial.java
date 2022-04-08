@@ -20,12 +20,22 @@ public class ArmazenamentoSequencial {
 	 * */
 	public void addItemArray(char value) {
 		
-		if(qtdElementos == this.array.length) throw new RuntimeException("Array ja possui qtd maxima de elementos ("+this.array.length+").");
+		this.grow();
 		
 		this.array[qtdElementos] = value;
 		
 		if(qtdElementos < this.array.length)
 			qtdElementos++;
+	}
+	
+	private void grow() {
+		if(qtdElementos == array.length - 1) {
+			char[] array = new char[qtdElementos*2];
+			for (int i = 0; i < this.array.length; i++) {
+				array[i] = this.array[i];
+			}
+			this.array = array;
+		}
 	}
 	
 	public char getItem(int index) {
@@ -36,7 +46,7 @@ public class ArmazenamentoSequencial {
 	 * Sera necessario reorganizar o vetor para insercao de elementos de maneira arbitraria no meio do array
 	 * */
 	public void addByIndex(char value, int index) {
-		if(qtdElementos == this.array.length) throw new RuntimeException("Array ja possui qtd maxima de elementos ("+this.array.length+").");
+		this.grow();
 		
 		char localValue = value;
 		char aux;

@@ -33,5 +33,18 @@ public class Main {
 			as.imprimirArray();
 		}
 		
+		as.addItemArray('F');
+		as.addItemArray('G');
+		as.addItemArray('H');
+		as.addItemArray('I');
+		as.addItemArray('J');
+		as.addItemArray('F');
+		as.addItemArray('G');
+		as.addItemArray('H');
+		as.addItemArray('I');
+		as.addItemArray('J');
+		
+		as.imprimirArray();
+		
 	}
 }
