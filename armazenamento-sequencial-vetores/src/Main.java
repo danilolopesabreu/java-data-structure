@@ -1,6 +1,6 @@
 
 /**
- * 
+ * Vetores sao estruturas que armazenam elementos lado a lado, de maneira sequencial
  * */
 public class Main {
 	public static void main(String[] args) {
