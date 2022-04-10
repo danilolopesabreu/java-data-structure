@@ -7,6 +7,10 @@ public class ListaLigada {
 	public void adicionaNoComeco(Object elemento) {
 		Celula novoPrimeiro = new Celula(elemento, this.primeiro);
 		this.primeiro = novoPrimeiro;
+		
+		if(qtdElementos == 0)
+			this.ultimo = this.primeiro;
+		
 		this.qtdElementos++;
 	}
 
@@ -15,24 +19,9 @@ public class ListaLigada {
 		if (this.primeiro == null) {
 			this.adicionaNoComeco(elemento);
 		} else {
-			if (this.ultimo == null) {
-				this.ultimo = new Celula(elemento, null);
-
-				Celula elementoAtual = this.primeiro;
-
-				for (int i = 0; i < qtdElementos; i++) {
-					if (elementoAtual.getProximo() == null) {
-						elementoAtual.setProximo(this.ultimo);
-						break;
-					}
-					elementoAtual = elementoAtual.getProximo();
-				}
-
-			} else {
-				Celula novoUltimo = new Celula(elemento, null);
-				this.ultimo.setProximo(novoUltimo);
-				this.ultimo = novoUltimo;
-			}
+			Celula novoUltimo = new Celula(elemento, null);
+			this.ultimo.setProximo(novoUltimo);
+			this.ultimo = novoUltimo;
 			this.qtdElementos++;
 		}
 
@@ -40,33 +29,22 @@ public class ListaLigada {
 
 	public void adiciona(int posicao, Object elemento) {
 		
-		if(posicao == 0 || this.qtdElementos == 0) {
-			adicionaNoComeco(elemento);
+		if(posicao == 0) {
+			adicionaNoComeco(elemento); 
 		}else {
-			Celula elementoAtual = this.primeiro;
-			for (int i = 0; i < this.qtdElementos; i++) {
-				if(posicao == i) {
-					Celula novoElemento = new Celula(elemento, elementoAtual.getProximo());
-					elementoAtual.setProximo(novoElemento);
-					this.qtdElementos++;
-					break;
-				}
-				elementoAtual = elementoAtual.getProximo();
-			}
+			Celula elementoAtual = this.pega(posicao);
+			Celula novoElemento = new Celula(elemento, elementoAtual.getProximo());
+			elementoAtual.setProximo(novoElemento);
+			this.qtdElementos++;
 		}
-		
 	}
 	
-	public Object pega(int posicao) {
-		Object retorno = null;
+	public Celula pega(int posicao) {
 		Celula elementoAtual = this.primeiro;
-		for (int i = 0; i < this.qtdElementos; i++) {
-			if(posicao == i) {
-				retorno = elementoAtual.getElemento();
-			}
+		for (int i = 0; i < posicao; i++) {
 			elementoAtual = elementoAtual.getProximo();
 		}
-		return retorno;
+		return elementoAtual;
 	}
 
 	public void remove(int posicao) {

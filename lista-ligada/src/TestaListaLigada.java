@@ -31,5 +31,7 @@ public class TestaListaLigada {
         lista.remove(2);
         System.out.println(lista);
         
+        System.out.println(lista.pega(2).getElemento());
+        
     }
 }

@@ -28,4 +28,9 @@ public class Celula {
 		this.proximo = proximo;
 	}
 
+	@Override
+	public String toString() {
+		return "Celula [elemento=" + elemento + ", proximo=" + proximo + "]";
+	}
+
 }
