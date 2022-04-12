@@ -1,3 +1,6 @@
+/**
+ * @see java.util.LinkedList
+ * */
 public class ListaLigada {
 
 	private Celula primeiro;
