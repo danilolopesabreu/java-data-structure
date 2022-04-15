@@ -1,3 +1,4 @@
+package selection_insert_sort;
 public class TestaOrdenacao {
 
     public static void main(String[] args) {
