@@ -7,34 +7,40 @@ public class TestaOrdenacao {
 		
 		final Aluno[] alunos2 = { new Aluno("A", 2), new Aluno("B", 3), new Aluno("C", 4), new Aluno("D", 6), new Aluno("D", 8), new Aluno("D", 11), new Aluno("D", 15) };
 		
-		final Aluno[] alunosOrdenados = new Aluno[alunos1.length + alunos2.length];
+		Aluno[] alunosOrdenados = junta(alunos2, alunos1);
+		
+		for (int i = 0; i < alunosOrdenados.length; i++) {
+			System.out.println(alunosOrdenados[i]);
+		}
+		
+	}
+	
+	private static Aluno[] junta(Aluno[] array1, Aluno[] array2) {
+		final Aluno[] alunosOrdenados = new Aluno[array1.length + array2.length];
 		
 		int indiceAlunos1 = 0;
 		int indiceAlunos2 = 0;
 		
 		for (int i = 0; i < alunosOrdenados.length; i++) {
 			
-			if(indiceAlunos2 == alunos2.length){
-				addAll(alunosOrdenados, alunos1, i, indiceAlunos1);
+			if(indiceAlunos2 == array2.length){
+				addAll(alunosOrdenados, array1, i, indiceAlunos1);
 				break;
-			}else if(indiceAlunos1 == alunos1.length) {
-				addAll(alunosOrdenados, alunos2, i, indiceAlunos2);
+			}else if(indiceAlunos1 == array1.length) {
+				addAll(alunosOrdenados, array2, i, indiceAlunos2);
 				break;
 			}
 			
-			if(alunos1[indiceAlunos1].getId() < alunos2[indiceAlunos2].getId()) {
-				alunosOrdenados[i] = alunos1[indiceAlunos1];
+			if(array1[indiceAlunos1].getId() < array2[indiceAlunos2].getId()) {
+				alunosOrdenados[i] = array1[indiceAlunos1];
 				indiceAlunos1++;
 			}else {
-				alunosOrdenados[i] = alunos2[indiceAlunos2];
+				alunosOrdenados[i] = array2[indiceAlunos2];
 				indiceAlunos2++;
 			}
 		}
 		
-		for (int i = 0; i < alunosOrdenados.length; i++) {
-			System.out.println(alunosOrdenados[i]);
-		}
-		
+		return alunosOrdenados;
 	}
 	
 	private static void addAll(Aluno[] target, Aluno[] source, int pointToFill, int pointToStartCopy) {
