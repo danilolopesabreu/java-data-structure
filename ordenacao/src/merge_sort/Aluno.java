@@ -3,6 +3,7 @@ package merge_sort;
 public class Aluno {
 	private String nome;
 	private int id;
+	private double nota;
 
 	public Aluno() {
 	}
@@ -12,10 +13,10 @@ public class Aluno {
 		this.nome = nome;
 	}
 
-	public Aluno(String nome, int id) {
+	public Aluno(String nome, double nota) {
 		super();
 		this.nome = nome;
-		this.id = id;
+		this.nota = nota;
 	}
 
 	public String getNome() {
@@ -36,7 +37,15 @@ public class Aluno {
 
 	@Override
 	public String toString() {
-		return "Aluno [nome=" + nome + ", id=" + id + "]";
+		return nome + "  " + nota ;
+	}
+
+	public double getNota() {
+		return nota;
+	}
+
+	public void setNota(double nota) {
+		this.nota = nota;
 	}
 
 }
