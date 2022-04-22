@@ -16,7 +16,7 @@ public class QuickSort {
 		}
 	}
 	
-	private static void ordena(Aluno[] notas, int inicio, int termino) {
+	public static void ordena(Aluno[] notas, int inicio, int termino) {
 		int qtdElementos = termino - inicio;
 		if(qtdElementos > 1) {
 			int posicaoPivo = particiona(notas, inicio, termino);
