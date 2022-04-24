@@ -1,7 +1,5 @@
 package binary_search;
 
-import java.util.Arrays;
-
 import merge_sort.Aluno;
 import quick_sort.QuickSort;
 

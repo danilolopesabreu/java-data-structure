@@ -39,7 +39,6 @@ public class TestaOrdenacao {
     private static void insertionSort(Produto[] produtos, int quantidadeDeElementos) {
     	 for (int atual = 1; atual < quantidadeDeElementos; atual++) {
     	     System.out.println("Estou na casinha " + atual);
-
     	     int analise = atual;
     	     while(analise > 0 && produtos[analise].getPreco() < produtos[analise -1].getPreco() ){
     	         troca(produtos, analise, analise -1);
@@ -49,15 +48,12 @@ public class TestaOrdenacao {
     	}
 
     private static int buscaMenor(Produto[] produtos, int inicio, int termino) {
-
         int maisBarato = inicio;
-
         for (int atual = inicio; atual <= termino; atual++) {
             if (produtos[atual].getPreco() < produtos[maisBarato].getPreco()) {
                 maisBarato = atual;
             }
         }
-
         return maisBarato;
     }
 }
