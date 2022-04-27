@@ -8,15 +8,15 @@ public class Fibonacci {
 
 	// 0,1,1,2,3,5,8,13,21,34
 	private static int fibIterativo(int n) {
-		int ultimo = 0;
 		int penultimo = 0;
-		int resultado = 1;
+		int ultimo = 1;
+		int temp = 0;
 		for (int i = 2; i <= n; i++) {
+			temp = penultimo;
 			penultimo = ultimo;
-			ultimo = resultado;
-			resultado = penultimo + ultimo;
+			ultimo = penultimo + temp;
 		}
-		return resultado;
+		return ultimo;
 	}
 
 	private static int fib(int i) {
