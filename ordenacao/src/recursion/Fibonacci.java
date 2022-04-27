@@ -7,8 +7,8 @@ package recursion;
  * */
 public class Fibonacci {
 	public static void main(String[] args) {
-		System.out.println(fib(5));
-		System.out.println(fibIterativo(8));
+		System.out.println(fib(6));
+		System.out.println(fibIterativo(6));
 	}
 
 	// 0,1,1,2,3,5,8,13,21,34
@@ -24,11 +24,30 @@ public class Fibonacci {
 		return ultimo;
 	}
 
-	// 0,1,1,2,3,5,8,13,21,34
+	/**
+	 * Encontrar o elemento da sexta posição (8).
+	 * 
+	 * 1, 1, 2, 3, 5, 8, 13, 21, 34
+	 * 
+	 *					 fib(5) = fib(3) + fib(4) = 2 + 3 -> 5
+	 * fib(6) = fib(4) + fib(5) = 3 + 5 -> 8
+	 * 			
+	 * fib(4) = fib(3) + fib(2) = 2 + 1 -> 3
+	 * 			
+	 * fib(3) = fib(1) + fib(2) -> 2
+	 * 					 fib(2) = fib(0) + fib(1) = 0 + 1 -> 1
+	 * 					 
+	 * fib(1) -> 1
+	 * */
 	private static int fib(int n) {
+		
 		if(n < 2)
 			return n;
-		return fib(n - 2) + fib(n - 1);
+		
+		int fibA = fib(n - 2);
+		int fibB = fib(n - 1);
+		
+		return  fibA + fibB;
 	}
 	
 }
