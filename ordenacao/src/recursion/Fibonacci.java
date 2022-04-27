@@ -7,8 +7,8 @@ package recursion;
  * */
 public class Fibonacci {
 	public static void main(String[] args) {
-//		System.out.println(fib(6));
-		System.out.println(fibIterativo(9));
+		System.out.println(fib(5));
+		System.out.println(fibIterativo(8));
 	}
 
 	// 0,1,1,2,3,5,8,13,21,34
@@ -24,13 +24,11 @@ public class Fibonacci {
 		return ultimo;
 	}
 
-	private static int fib(int i) {
-		int retorno = 0;
-		
-		if(i >= 2)
-			retorno = fib(i - 2) + fib(i - 1);
-			
-		return retorno;
+	// 0,1,1,2,3,5,8,13,21,34
+	private static int fib(int n) {
+		if(n < 2)
+			return n;
+		return fib(n - 2) + fib(n - 1);
 	}
 	
 }
