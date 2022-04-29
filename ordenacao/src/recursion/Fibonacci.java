@@ -1,5 +1,7 @@
 package recursion;
 
+import java.util.Iterator;
+
 /**
  * Cada elemento da sequencia de fibonacci é a soma dos Dois elementos anteriores.
  * fib(n) = fib(n - 2) + fib(n - 1) se n >= 2
@@ -7,8 +9,12 @@ package recursion;
  * */
 public class Fibonacci {
 	public static void main(String[] args) {
-		System.out.println(fib(6));
-		System.out.println(fibIterativo(6));
+//		System.out.println(fib(9));
+//		System.out.println(fibIterativo(6));
+		
+		for (int i=0; i<=9;i++) {
+			System.out.println(fib(i));
+		}
 	}
 
 	// 0,1,1,2,3,5,8,13,21,34
@@ -46,8 +52,9 @@ public class Fibonacci {
 		
 		int fibA = fib(n - 2);
 		int fibB = fib(n - 1);
+		int result = fibA + fibB;
 		
-		return  fibA + fibB;
+		return  result;
 	}
 	
 }
