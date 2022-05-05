@@ -2,7 +2,7 @@ package selection_insert_sort;
 public class SelectionSort {
    
     public static void main (String[] args) {
-        int [] array = {20,15,12,0,1,9,8,4,6,7,7,8,5,2,1};
+        int [] array = {20,15,12,0,1,9,8,4,6,7,7,8,-1,5,2,1,-2,21};
         sorting(array);
         
         for(int i=0; i<array.length;i++){
