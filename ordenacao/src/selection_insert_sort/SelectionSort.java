@@ -26,7 +26,7 @@ public class SelectionSort {
     
     private static int findMinorElementPosition(int [] array, int valueToVerify, int startPoint){
       int tempValue = valueToVerify;
-      int minorPosition = 0;
+      int minorPosition = startPoint;
       
       for(int i = startPoint; i < array.length;i++){
         
